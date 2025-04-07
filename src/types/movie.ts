@@ -22,7 +22,7 @@ export type MovieResponse = {
   total_results: number
 };
 
-export interface MovieDetail {
+export interface MovieDetail { 
   adult: boolean;
   backdrop_path: string;
   id: number;
@@ -36,4 +36,18 @@ export interface MovieDetail {
   video: boolean;
   vote_average: number;
   vote_count: number;
+}
+export interface CastMember {
+  id: number;
+  name: string;
+  character: string;
+  profile_path: string | null;
+  order: number;
+}
+
+export interface CrewMember {
+  id: number;
+  name: string;
+  job: string;
+  department: string;
 }
