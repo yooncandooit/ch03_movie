@@ -8,12 +8,12 @@ interface MovieCardProps {
 
 export default function MovieCard({ movie }: MovieCardProps) {
   const [isHovered, setIsHovered] = useState(false);
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // navigate 함수 정의
 
   return (
     <div
-    onClick={() => navigate(`/movies/${movie.id}`)}
-      className="relative rounded-xl shadow-lg overflow-hidden cursor-pointer w-44 transition-transform duration-300 hover:scale-105"
+    onClick={() => navigate(`/movie-detail/${movie.id}`)}
+    className="relative rounded-xl shadow-lg overflow-hidden cursor-pointer w-44 transition-transform duration-300 hover:scale-105"
       onMouseEnter={(): void => setIsHovered(true)}
       onMouseLeave={(): void => setIsHovered(false)}
     >

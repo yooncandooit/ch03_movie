@@ -1,26 +1,27 @@
 import "./App.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+//createBrowserRouter v6
+
 import HomePage from "./pages/HomePage";
 import MoviePage from "./pages/MoviePage";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import NotFoundPage from "./pages/NotFoundPage";
 import MovieDetailPage from "./pages/MovieDetailPage";
 
-//createBrowserRouter v6
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
+    element: <HomePage />, // Routelayout?? 페이지 이동 안되는 이슈
     errorElement: <NotFoundPage />,
     children: [
       {
-        path: "movies/:category",
+        path: "movies/:category", // category는 문자열만 허용
         element: <MoviePage />,
       },
       {
-        path: 'movies/:movieId', // 이해 안됨!
-        element: <MovieDetailPage />
-      }
+        path: "movie-detail/:movieId",
+        element: <MovieDetailPage />,
+      }      
     ],
   },
 ]);
